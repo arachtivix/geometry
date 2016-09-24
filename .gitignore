@@ -1,0 +1,8 @@
+.classpath
+out.PNG
+build/tmp/jar/MANIFEST.MF
+bin/
+build/
+.settings/
+.gradle/
+.project
