@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 
-public class Circle implements Comparable {
+public class Circle implements Comparable<Circle> {
 
 	private final Vector3D center;
 	private final double radius;
@@ -93,21 +93,17 @@ public class Circle implements Comparable {
 	}
 
 	@Override
-	public int compareTo(Object arg0) {
+	public int compareTo(Circle arg0) {
 		int retval;
 		
-		if( arg0 instanceof Circle ){
-			Circle other = (Circle)arg0;
-			double diff = this.radius - other.radius;
-			if( diff > 1 || diff < -1 ){
-				retval = (int)diff;
-			} else if( diff > 0 ) {
-				retval = 1;
-			} else {
-				retval = -1;
-			}
+		Circle other = (Circle)arg0;
+		double diff = this.radius - other.radius;
+		if( diff > 1 || diff < -1 ){
+			retval = (int)diff;
+		} else if( diff > 0 ) {
+			retval = 1;
 		} else {
-			retval = 0;
+			retval = -1;
 		}
 		
 		return retval;
