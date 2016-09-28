@@ -14,7 +14,7 @@ import org.encog.neural.networks.training.propagation.resilient.ResilientPropaga
 
 import com.wernerware.fractals.circles.Circle;
 
-public class CirclesOverlapProblem {
+public class TwoCirclesOverlapProblem {
 
 	public static void main(String[] args) {
 
@@ -34,7 +34,7 @@ public class CirclesOverlapProblem {
 			expected[i][0] = 1.0;
 		}
 
-		for( int i = 0; i < numScenarios / 2; i++ ){
+		for( int i = numScenarios / 2; i < numScenarios; i++ ){
 			Circle scenario[] = generateScenario(false);
 			input[i][0] = scenario[0].getRadius();
 			input[i][1] = scenario[0].getCenter().getX();
